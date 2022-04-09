@@ -1,13 +1,17 @@
 package org.loose.fis.sre.services;
 
+import org.dizitart.no2.Cursor;
 import org.dizitart.no2.Nitrite;
+import org.dizitart.no2.NitriteCollection;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.User;
 
+import javax.swing.text.Document;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Iterator;
 import java.util.Objects;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
@@ -24,15 +28,24 @@ public class UserService {
         userRepository = database.getRepository(User.class);
     }
 
-    public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
+    public static void addUser(String username, String password, String address, String ID, String phone, String mail, String role) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
-        userRepository.insert(new User(username, encodePassword(username, password), role));
+        userRepository.insert(new User(username, encodePassword(username, password), address, ID, phone, mail, role));
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
         for (User user : userRepository.find()) {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
+        }
+    }
+
+    public static void printUsers(){
+        NitriteCollection n= userRepository.getDocumentCollection();
+        Cursor x =  n.find();
+        Iterator i = x.iterator();
+        while(i.hasNext()){
+            System.out.println( ((Document)(i.next())).getProperty("username"));
         }
     }
 
@@ -56,6 +69,6 @@ public class UserService {
         }
         return md;
     }
-
-
 }
+
+

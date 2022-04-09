@@ -17,17 +17,28 @@ public class RegistrationController {
     @FXML
     private TextField usernameField;
     @FXML
+    private TextField addressField;
+    @FXML
+    private TextField IDField;
+    @FXML
+    private TextField phoneField;
+    @FXML
+    private TextField mailField;
+    @FXML
     private ChoiceBox role;
+
+    public RegistrationController() {
+    }
 
     @FXML
     public void initialize() {
-        role.getItems().addAll("Client", "Admin");
+        role.getItems().addAll("translator", "verifier");
     }
 
     @FXML
     public void handleRegisterAction() {
         try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
+            UserService.addUser(usernameField.getText(), passwordField.getText(), addressField.getText(), IDField.getText(), phoneField.getText(), mailField.getText(), (String) role.getValue());
             registrationMessage.setText("Account created successfully!");
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
