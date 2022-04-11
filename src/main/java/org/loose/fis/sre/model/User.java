@@ -12,7 +12,10 @@ public class User {
     private String mail;
     private String role;
 
-    public User(String username, String password, String role) {
+    public User() {
+    }
+
+    public User(String username, String encodePassword, String address, String id, String phone, String mail, String role) {
         this.username = username;
         this.password = password;
         this.address = address;
@@ -20,12 +23,6 @@ public class User {
         this.phone = phone;
         this.mail = mail;
         this.role = role;
-    }
-
-    public User() {
-    }
-
-    public User(String username, String encodePassword, String address, String id, String phone, String mail, String role) {
     }
 
     public String getUsername() {
