@@ -1,13 +1,14 @@
 package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Cursor;
+import org.dizitart.no2.Document;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.NitriteCollection;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.User;
 
-import javax.swing.text.Document;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -41,12 +42,14 @@ public class UserService {
     }
 
     public static void printUsers(){
-        NitriteCollection n= userRepository.getDocumentCollection();
-        Cursor x =  n.find();
-        Iterator i = x.iterator();
-        while(i.hasNext()){
-            System.out.println( ((Document)(i.next())).getProperty("username"));
-        }
+        try {
+            NitriteCollection n = userRepository.getDocumentCollection();
+            Cursor x = n.find();
+            for (Document keyValuePairs : x) {
+                System.out.println(keyValuePairs.get("username"));
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());}
     }
 
     private static String encodePassword(String salt, String password) {

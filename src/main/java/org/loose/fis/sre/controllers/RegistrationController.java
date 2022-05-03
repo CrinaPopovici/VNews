@@ -33,6 +33,7 @@ public class RegistrationController {
     @FXML
     public void initialize() {
         role.getItems().addAll("translator", "verifier");
+        role.setValue("translator");
     }
 
     @FXML
@@ -43,5 +44,6 @@ public class RegistrationController {
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
         }
+        //UserService.printUsers();
     }
 }
