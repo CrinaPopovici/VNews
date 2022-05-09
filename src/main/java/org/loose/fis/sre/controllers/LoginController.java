@@ -9,9 +9,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import org.loose.fis.sre.Main;
+import org.loose.fis.sre.exceptions.IncorrectPasswordException;
+import org.loose.fis.sre.exceptions.IncorrectUsernameException;
+import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.services.UserService;
 
 import java.io.IOException;
-import java.net.URL;
+
 
 public class LoginController {
    @FXML
@@ -21,14 +25,32 @@ public class LoginController {
     @FXML
     private TextField txtPassword;
 
-    public void Login(ActionEvent event){
 
-        if(txtUsername.getText().equals("user") && txtPassword.getText().equals("pass")){
-            lblStatus.setText("Login Success");
-        }else{
-            lblStatus.setText("Login Failed");
+
+
+    public void Login(ActionEvent event){
+            if (txtUsername.getText().isEmpty() ){
+                lblStatus.setText("Please enter a username!");}
+            else if (txtPassword.getText().isEmpty()) {
+                lblStatus.setText("Please enter a password!");
+            }else{
+                try {
+                    UserService.printUsers();
+                    UserService.CheckLogin(txtUsername.getText(),txtPassword.getText());
+                    Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("MainLogin.fxml"));
+                    Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    thisStage.setScene(new Scene(root, 500, 500));
+                    thisStage.show();
+                } catch (IOException e) {
+                    System.out.println(e);
+                }catch (IncorrectPasswordException | IncorrectUsernameException e){
+                    lblStatus.setText(e.getMessage());
+                }
+            }
         }
-    }
+
+
+
 
     public void login(ActionEvent actionEvent) {
         System.out.println(txtUsername.getText()+","+txtPassword.getText());
@@ -38,14 +60,12 @@ public class LoginController {
         try {
             Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("register.fxml"));
             Stage thisStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            thisStage.setScene(new Scene(root, 300, 275));
+            thisStage.setScene(new Scene(root, 300, 500));
             thisStage.show();
         } catch (IOException e) {
             System.out.println(e);
         }
-
-
     }
 
-
+ 
 }

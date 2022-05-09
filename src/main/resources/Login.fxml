@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
+<AnchorPane prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #81B6EF; -fx-background-image: 1\1.jpg;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
    <children>
-      <Button fx:id="loginB" layoutX="190.0" layoutY="171.0" mnemonicParsing="false" onAction="#Login" prefHeight="29.0" prefWidth="59.0" text="Login" />
-      <TextField fx:id="txtUsername" layoutX="43.0" layoutY="86.0" promptText="Username">
+      <Button fx:id="loginB" layoutX="190.0" layoutY="183.0" mnemonicParsing="false" onAction="#Login" prefHeight="29.0" prefWidth="62.0" text="Login" textFill="#1e09bf" />
+      <TextField fx:id="txtUsername" layoutX="43.0" layoutY="86.0" prefHeight="35.0" prefWidth="210.0" promptText="Username">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="txtPassword" layoutX="43.0" layoutY="125.0" promptText="Password">
+      <PasswordField fx:id="txtPassword" layoutX="43.0" layoutY="125.0" prefHeight="35.0" prefWidth="210.0" promptText="Password">
          <font>
             <Font size="16.0" />
          </font>
       </PasswordField>
-      <Label fx:id="lblStatus" layoutX="43.0" layoutY="37.0" prefHeight="17.0" prefWidth="218.0" text="Status">
+      <Label fx:id="lblStatus" layoutX="43.0" layoutY="37.0" prefHeight="17.0" prefWidth="218.0" text="VNews" textOverrun="CLIP">
          <font>
-            <Font size="13.0" />
+            <Font size="19.0" />
          </font></Label>
-      <Button fx:id="regiaterB" layoutX="190.0" layoutY="227.0" mnemonicParsing="false" onAction="#register" prefHeight="29.0" prefWidth="76.0" text="Register" />
+      <Button fx:id="registerB" layoutX="190.0" layoutY="227.0" mnemonicParsing="false" onAction="#register" prefHeight="29.0" prefWidth="76.0" text="Register" textFill="#2502bf" />
+      <ImageView fitHeight="108.0" fitWidth="141.0" layoutX="41.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@1/1.jpg" />
+         </image></ImageView>
    </children>
 </AnchorPane>

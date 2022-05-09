@@ -15,7 +15,7 @@ public class User {
     public User() {
     }
 
-    public User(String username, String encodePassword, String address, String id, String phone, String mail, String role) {
+    public User(String username, String password, String address, String ID, String phone, String mail, String role) {
         this.username = username;
         this.password = password;
         this.address = address;
@@ -24,6 +24,11 @@ public class User {
         this.mail = mail;
         this.role = role;
     }
+///user-ul pt login
+    /*public User(String username, String encodePassword) {
+        this.username = username;
+        this.password = password;
+    }*/
 
     public String getUsername() {
         return username;

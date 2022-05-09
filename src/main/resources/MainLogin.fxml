@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" style="-fx-background-image: url('1.jpg');" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MainLoginController">
+   <children>
+      <TextArea layoutX="35.0" layoutY="43.0" prefHeight="200.0" prefWidth="200.0" promptText="ok" />
+      <Button fx:id="logoff" layoutX="235.0" layoutY="14.0" mnemonicParsing="false" onAction="#BacktoLogin" text="log off" />
+   </children>
+</AnchorPane>
