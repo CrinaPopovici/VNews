@@ -10,7 +10,7 @@
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
-    <Text id="title-text" text="VNews - Registration" wrappingWidth="196.12890625" GridPane.columnSpan="2" GridPane.rowIndex="1">
+    <Text id="title-text" text=" VNews - Registration" wrappingWidth="196.12890625" GridPane.columnSpan="2" GridPane.rowIndex="1">
       <font>
          <Font size="17.0" />
       </font></Text>
@@ -45,6 +45,10 @@
 
     <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
     </ChoiceBox>
+
+    <Label text="Code(for administrators):" GridPane.rowIndex="9" />
+
+    <TextField fx:id="codeField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
 
     <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="10" />
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="13">

@@ -1,6 +1,7 @@
 package org.loose.fis.sre.controllers;
 
 
+import com.sun.javafx.scene.control.ContextMenuContent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,7 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.loose.fis.sre.Main;
-
+import javafx.scene.control.MenuItem;
 import java.io.IOException;
 
 public class MainLoginController {
@@ -21,6 +22,25 @@ public class MainLoginController {
         } catch (IOException e) {
             System.out.println(e);
         }
+    }
+    public MenuItem EnglishFx, HomeFx, RomanianFx, FrenchFx, SpanishFx;
+    public void handleHome(ActionEvent actionEvent){
+
+    }
+    public void handleEnglish(ActionEvent actionEvent){
+
+    }
+    public void handleRomanian(ActionEvent actionEvent){
+
+    }
+    public void handleFrench(ActionEvent actionEvent){
+
+    }
+    public void handleGerman(ActionEvent actionEvent){
+
+    }
+    public void handleSpanish(ActionEvent actionEvent){
+
     }
 }
 

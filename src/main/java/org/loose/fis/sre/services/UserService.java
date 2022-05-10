@@ -30,10 +30,10 @@ public class UserService {
         userRepository = database.getRepository(User.class);
     }
 
-    public static void addUser(String username, String password, String address, String ID, String phone, String mail, String role) throws UsernameAlreadyExistsException {
+    public static void addUser(String username, String password, String address, String ID, String phone, String mail, String role, String code) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
         //System.out.println(password + " " + encodePassword(username, password));
-        userRepository.insert(new User(username, encodePassword(username, password), address, ID, phone, mail, role));
+        userRepository.insert(new User(username, encodePassword(username, password), address, ID, phone, mail, role, code));
         printUsers();
     }
 
