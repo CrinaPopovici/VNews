@@ -1,28 +1,23 @@
 package org.loose.fis.sre.controllers;
 
 
-import com.sun.javafx.scene.control.ContextMenuContent;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import org.loose.fis.sre.Main;
 import javafx.scene.control.MenuItem;
-import java.io.IOException;
+import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.services.UserService;
 
 public class MainLoginController {
     public void BacktoLogin(ActionEvent actionEvent) {
-        try {
-            Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("Login.fxml"));
-            Stage thisStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            thisStage.setScene(new Scene(root, 300, 500));
-            thisStage.show();
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+        Main m = new Main();
+        m.changeScene("Login.fxml");
     }
+
+    public void goToArticle(ActionEvent actionEvent) {
+        Main m = new Main();
+        m.changeScene("AddArticles.fxml");
+    }
+
     public MenuItem EnglishFx, HomeFx, RomanianFx, FrenchFx, SpanishFx;
     public void handleHome(ActionEvent actionEvent){
 

@@ -4,29 +4,59 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.loose.fis.sre.services.FileSystemService;
 import org.loose.fis.sre.services.UserService;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Objects;
 
 public class Main extends Application {
+    int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
+    int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
+
+    private static Stage stage;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
+        stage = primaryStage;
+
         initDirectory();
         UserService.initDatabase();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
-        primaryStage.setTitle("VNews");
-        primaryStage.setScene(new Scene(root, 300, 300));
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        primaryStage.setTitle("Welcome to VNews!");
+        int sceneWidth = 300;
+        int sceneHeight = 300;
+        if (screenWidth <= 800 && screenHeight <= 600) {
+            sceneWidth = 600;
+            sceneHeight = 350;
+        } else if (screenWidth <= 1280 && screenHeight <= 768) {
+            sceneWidth = 800;
+            sceneHeight = 450;
+        } else if (screenWidth <= 1920 && screenHeight <= 1080) {
+            sceneWidth = 1000;
+            sceneHeight = 650;
+        }
+
+        primaryStage.setScene(new Scene(root, sceneWidth, sceneHeight));
         primaryStage.show();
-        //ImageView iv=new ImageView(img);
-        //iv.setImage(img);
-       // pane.getChildren().add(iv);
+    }
+
+    public void changeScene(String fxml) {
+        try {
+            Parent pane = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
+            stage.getScene().setRoot(pane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initDirectory() {
@@ -34,9 +64,6 @@ public class Main extends Application {
         if (!Files.exists(applicationHomePath))
             applicationHomePath.toFile().mkdirs();
     }
-    //Image img=new Image("file:1.jpg");
-   // StackPane pane =new StackPane();
-   // Scene scene=new Scene(pane,500,500)
 
     public static void main(String[] args) {
         launch(args);

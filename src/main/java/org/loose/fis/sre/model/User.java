@@ -85,7 +85,7 @@ public class User {
         return mail;
     }
 
-    public void setMail(String role) {this.mail = mail;}
+    public void setMail(String mail) {this.mail = mail;}
 
     public String getCode(){
         return code;

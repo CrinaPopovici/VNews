@@ -34,7 +34,7 @@ public class UserService {
         checkUserDoesNotAlreadyExist(username);
         //System.out.println(password + " " + encodePassword(username, password));
         userRepository.insert(new User(username, encodePassword(username, password), address, ID, phone, mail, role, code));
-        printUsers();
+        //printUsers();
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
@@ -44,7 +44,7 @@ public class UserService {
         }
     }
 
-    public static void printUsers(){
+   /* public static void printUsers(){
         try {
             NitriteCollection n = userRepository.getDocumentCollection();
             Cursor x = n.find();
@@ -53,7 +53,7 @@ public class UserService {
             }
         }catch(Exception e){
             System.out.println(e.getMessage());}
-    }
+    } */
 
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
