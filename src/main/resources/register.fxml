@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" style="-fx-background-color: #81B6EF;" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
+<GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" style="-fx-background-color: #81B6EF;" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
 
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
@@ -46,9 +46,9 @@
     <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
     </ChoiceBox>
 
-    <Label text="Code(for administrators):" GridPane.rowIndex="9" />
+    <Label fx:id="Code" text="Code(for administrators):" GridPane.rowIndex="9" />
 
-    <TextField fx:id="codeField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+    <TextField fx:id="code" GridPane.columnIndex="1" GridPane.rowIndex="9" />
 
     <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="10" />
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="13">

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddArticlesController">
+   <children>
+      <TextArea layoutX="70.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" text="Write the article here" />
+      <Button layoutX="288.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleGoToArticle" text="Add" />
+      <Button mnemonicParsing="false" onAction="#handleBackToMainLogin" text="Back" />
+      <Button layoutX="290.0" layoutY="300.0"  onAction="#uploadChoosenImage" mnemonicParsing="false" text="Upload image" />
+   </children>
+</AnchorPane>

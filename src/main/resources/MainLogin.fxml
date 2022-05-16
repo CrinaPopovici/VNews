@@ -18,5 +18,6 @@
             <MenuItem fx:id="SpanishFx" mnemonicParsing="false" onAction="#handleSpanish" text="Spanish Articles" />
         </items>
       </MenuButton>
+      <Button layoutX="296.0" layoutY="15.0" mnemonicParsing="false" text="Adauga articol"  onAction="#goToArticle"/>
    </children>
 </AnchorPane>
