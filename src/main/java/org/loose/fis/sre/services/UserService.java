@@ -5,6 +5,7 @@ import org.dizitart.no2.Document;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.NitriteCollection;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.IncorrectCodeException;
 import org.loose.fis.sre.exceptions.IncorrectPasswordException;
 import org.loose.fis.sre.exceptions.IncorrectUsernameException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
@@ -80,10 +81,24 @@ public class UserService {
     public static boolean CheckLogin(String username, String password) throws IncorrectUsernameException, IncorrectPasswordException {
         for (User user : userRepository.find()) {//pt toti userii din bazade date
             if (Objects.equals(username, user.getUsername())) {
-                System.out.println(user.getPassword());
+               // System.out.println(user.getPassword());
                 if(user.getPassword().equals(encodePassword(username,password))) //daca parolele din aplicatie si din baza de date(cea din baza de date e criptata) sunt egale
                     return true;
                 throw new IncorrectPasswordException(username);
+            }
+        }
+        throw new IncorrectUsernameException(username);
+    }
+
+    public static boolean CheckCode(String username, String password, String code) throws IncorrectUsernameException, IncorrectPasswordException, IncorrectCodeException {
+        for (User user : userRepository.find()) {//pt toti userii din bazade date
+            if (Objects.equals(username, user.getUsername())) {
+                if (user.getPassword().equals(encodePassword(username, password))) {
+                    if (Objects.equals(code, user.getCode()))
+                        return true;
+                    throw new IncorrectCodeException(username);
+                }
+             throw new IncorrectPasswordException(username);
             }
         }
         throw new IncorrectUsernameException(username);

@@ -58,6 +58,6 @@ public class RegistrationController {
 
     public void handleBacktoLogin(ActionEvent actionEvent) {
         Main m = new Main();
-        m.changeScene("MainLogin.fxml");
+        m.changeScene("Login.fxml");
     }
 }
