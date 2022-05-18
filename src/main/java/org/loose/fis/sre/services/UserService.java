@@ -103,5 +103,14 @@ public class UserService {
         }
         throw new IncorrectUsernameException(username);
     }
+
+    public static boolean CodeC(String username,String code)throws IncorrectUsernameException,IncorrectCodeException{
+        for (User user : userRepository.find()) {
+            if (Objects.equals(code, user.getCode()))
+                return true;
+            throw new IncorrectCodeException(username);
+        }
+        throw new IncorrectUsernameException(username);
+    }
 }
 

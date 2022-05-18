@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MainVoluntarControler">
+    <children>
+        <Button layoutX="37.0" layoutY="68.0" mnemonicParsing="false" onAction='#MainLogin' text="Main" textFill="#3f1bc3" />
+        <Button layoutX="37.0" layoutY="21.0" mnemonicParsing="false" onAction='#LogOff' text=" Log off" textFill="#2c0fbf" />
+        <CheckBox layoutX="195.0" layoutY="141.0" mnemonicParsing="false" text="Do you like pizza?" />
+    </children>
+</AnchorPane>
