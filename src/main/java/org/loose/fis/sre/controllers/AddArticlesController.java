@@ -7,13 +7,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.loose.fis.sre.Main;
-
+//import java.scene.image.ImageView;
+import java.net.URI;
+import java.net.URL;
+import java.awt.image.ImageObserver;
 import java.io.File;
-
 import java.awt.*;
 import java.io.*;
 import java.net.URL;
@@ -24,9 +28,12 @@ import java.util.ResourceBundle;
 
 
 public class AddArticlesController {
+    @FXML
+    private Button btnOpenImgFIle;
     List<String> firstFile;
     private Label labSingleFile;
-
+    @FXML
+    private  ImageView imageViewFiles;
     public void handleBackToMainLogin(ActionEvent actionEvent) {
         Main m = new Main();
         m.changeScene("MainLogin.fxml");
@@ -43,15 +50,37 @@ public class AddArticlesController {
         firstFile.add("*.png");
         firstFile.add("*.jpeg");
     }
-
     @FXML
-    void uploadChoosenImage(ActionEvent actionEvent) throws RuntimeException {
-        FileChooser fc = new FileChooser();
+    private void uploadChoosenImage(ActionEvent actionEvent) throws RuntimeException {
+       final FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", firstFile));
         File f = fc.showOpenDialog(null);
 
         if (f != null)
+        {
             labSingleFile.setText("selected File: " + f.getAbsolutePath());
+            imageViewFiles.setImage(new Image(f.toURI().toString()));
+
+        }
+    }
+
+
+
+    public void handleEnglish(ActionEvent actionEvent) {
+    }
+
+    public void handleRomanian(ActionEvent actionEvent) {
+    }
+
+    public void handleFrench(ActionEvent actionEvent) {
+    }
+
+    public void handleGerman(ActionEvent actionEvent) {
+    }
+
+    public void handleSpanish(ActionEvent actionEvent) {
     }
 }
+
+
 

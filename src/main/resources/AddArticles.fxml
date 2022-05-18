@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddArticlesController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #81B6EF; -fx-background-image: url( '1/1.jpg'); " xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddArticlesController">
+
+
    <children>
-      <TextArea layoutX="70.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" text="Write the article here" />
-      <Button layoutX="288.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleGoToArticle" text="Add" />
+      <TextArea layoutX="63.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" />
       <Button mnemonicParsing="false" onAction="#handleBackToMainLogin" text="Back" />
-      <Button layoutX="290.0" layoutY="300.0"  onAction="#uploadChoosenImage" mnemonicParsing="false" text="Upload image" />
+      <Button fx:id="btnOpenImgFile" layoutX="290.0" layoutY="300.0" mnemonicParsing="false" onAction="#uploadChoosenImage" text="Upload image" />
+      <ImageView fx:id="imageViewFiles" fitHeight="94.0" fitWidth="200.0" layoutX="63.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <MenuButton layoutX="288.0" layoutY="253.0" mnemonicParsing="false" text="Add">
+         <items>
+            <MenuItem fx:id="EnglishFx" mnemonicParsing="false" onAction="#handleEnglish" text="Add English Articles" />
+            <MenuItem fx:id="RomanianFx" mnemonicParsing="false" onAction="#handleRomanian" text="Add Romanian Articles" />
+            <MenuItem fx:id="FrenchFx" mnemonicParsing="false" onAction="#handleFrench" text="Add French Articles" />
+            <MenuItem fx:id="GermanFx" mnemonicParsing="false" onAction="#handleGerman" text="Add German Articles" />
+            <MenuItem fx:id="SpanishFx" mnemonicParsing="false" onAction="#handleSpanish" text="Add Spanish Articles" />
+         </items>
+      </MenuButton>
    </children>
 </AnchorPane>
