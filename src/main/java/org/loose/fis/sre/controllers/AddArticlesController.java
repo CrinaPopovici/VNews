@@ -31,6 +31,7 @@ public class AddArticlesController {
     @FXML
     private Button btnOpenImgFIle;
     List<String> firstFile;
+    @FXML
     private Label labSingleFile;
     @FXML
     private  ImageView imageViewFiles;
@@ -58,7 +59,7 @@ public class AddArticlesController {
 
         if (f != null)
         {
-            labSingleFile.setText("selected File: " + f.getAbsolutePath());
+            //labSingleFile.setText("selected File: " + f.getAbsolutePath());
             imageViewFiles.setImage(new Image(f.toURI().toString()));
 
         }
@@ -66,19 +67,21 @@ public class AddArticlesController {
 
 
 
-    public void handleEnglish(ActionEvent actionEvent) {
+    public void handleEnglishArticles(ActionEvent actionEvent) {
+
+
     }
 
-    public void handleRomanian(ActionEvent actionEvent) {
+    public void handleRomanianArticles(ActionEvent actionEvent) {
     }
 
-    public void handleFrench(ActionEvent actionEvent) {
+    public void handleFrenchArticles(ActionEvent actionEvent) {
     }
 
-    public void handleGerman(ActionEvent actionEvent) {
+    public void handleGermanArticles(ActionEvent actionEvent) {
     }
 
-    public void handleSpanish(ActionEvent actionEvent) {
+    public void handleSpanishArticles(ActionEvent actionEvent) {
     }
 }
 

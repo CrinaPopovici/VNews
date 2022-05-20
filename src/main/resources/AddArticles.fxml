@@ -14,11 +14,11 @@
       <ImageView fx:id="imageViewFiles" fitHeight="94.0" fitWidth="200.0" layoutX="63.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
       <MenuButton layoutX="288.0" layoutY="253.0" mnemonicParsing="false" text="Add">
          <items>
-            <MenuItem fx:id="EnglishFx" mnemonicParsing="false" onAction="#handleEnglish" text="Add English Articles" />
-            <MenuItem fx:id="RomanianFx" mnemonicParsing="false" onAction="#handleRomanian" text="Add Romanian Articles" />
-            <MenuItem fx:id="FrenchFx" mnemonicParsing="false" onAction="#handleFrench" text="Add French Articles" />
-            <MenuItem fx:id="GermanFx" mnemonicParsing="false" onAction="#handleGerman" text="Add German Articles" />
-            <MenuItem fx:id="SpanishFx" mnemonicParsing="false" onAction="#handleSpanish" text="Add Spanish Articles" />
+            <MenuItem fx:id="EnglishFx" mnemonicParsing="false" onAction="#handleEnglishArticles" text="Add English Articles" />
+            <MenuItem fx:id="RomanianFx" mnemonicParsing="false" onAction="#handleRomanianArticles" text="Add Romanian Articles" />
+            <MenuItem fx:id="FrenchFx" mnemonicParsing="false" onAction="#handleFrenchArticles" text="Add French Articles" />
+            <MenuItem fx:id="GermanFx" mnemonicParsing="false" onAction="#handleGermanArticles" text="Add German Articles" />
+            <MenuItem fx:id="SpanishFx" mnemonicParsing="false" onAction="#handleSpanishArticles" text="Add Spanish Articles" />
          </items>
       </MenuButton>
    </children>

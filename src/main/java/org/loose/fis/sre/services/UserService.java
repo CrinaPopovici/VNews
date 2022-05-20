@@ -79,7 +79,7 @@ public class UserService {
 
 
     public static boolean CheckLogin(String username, String password) throws IncorrectUsernameException, IncorrectPasswordException {
-        for (User user : userRepository.find()) {//pt toti userii din bazade date
+        for (User user : userRepository.find()) {//pt toti userii din baza de date
             if (Objects.equals(username, user.getUsername())) {
                // System.out.println(user.getPassword());
                 if(user.getPassword().equals(encodePassword(username,password))) //daca parolele din aplicatie si din baza de date(cea din baza de date e criptata) sunt egale

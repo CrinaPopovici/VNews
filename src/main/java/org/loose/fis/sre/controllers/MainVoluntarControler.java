@@ -38,4 +38,22 @@ public class MainVoluntarControler {
             e.printStackTrace();
         }
     }
+
+    public void handleHome(ActionEvent actionEvent) {
+    }
+
+    public void handleEnglish(ActionEvent actionEvent) {
+    }
+
+    public void handleRomanian(ActionEvent actionEvent) {
+    }
+
+    public void handleFrench(ActionEvent actionEvent) {
+    }
+
+    public void handleGerman(ActionEvent actionEvent) {
+    }
+
+    public void handleSpanish(ActionEvent actionEvent) {
+    }
 }
