@@ -2,6 +2,8 @@ package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
 
+import java.util.Objects;
+
 public class User {
     @Id
     private String username;
@@ -11,11 +13,11 @@ public class User {
     private String phone;
     private String mail;
     private String role;
-
+    private String code;
     public User() {
     }
 
-    public User(String username, String password, String address, String ID, String phone, String mail, String role) {
+    public User(String username, String password, String address, String ID, String phone, String mail, String role, String code) {
         this.username = username;
         this.password = password;
         this.address = address;
@@ -23,6 +25,7 @@ public class User {
         this.phone = phone;
         this.mail = mail;
         this.role = role;
+        this.code = code;
     }
 ///user-ul pt login
     /*public User(String username, String encodePassword) {
@@ -82,7 +85,14 @@ public class User {
         return mail;
     }
 
-    public void setMail(String role) {this.mail = mail;}
+    public void setMail(String mail) {this.mail = mail;}
+
+    public String getCode(){
+        return code;
+    }
+    public void setCode(String code){
+        this.code = code;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -91,13 +101,14 @@ public class User {
 
         User user = (User) o;
 
-        if (username != null ? !username.equals(user.username) : user.username != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (address != null ? !address.equals(user.address) : user.address != null) return false;
-        if (ID != null ? !ID.equals(user.ID) : user.ID != null) return false;
-        if (phone != null ? !phone.equals(user.phone) : user.phone != null) return false;
-        if (mail != null ? !mail.equals(user.mail) : user.mail != null) return false;
-        return role != null ? role.equals(user.role) : user.role == null;
+        if (!Objects.equals(username, user.username)) return false;
+        if (!Objects.equals(password, user.password)) return false;
+        if (!Objects.equals(address, user.address)) return false;
+        if (!Objects.equals(ID, user.ID)) return false;
+        if (!Objects.equals(phone, user.phone)) return false;
+        if (!Objects.equals(mail, user.mail)) return false;
+        if (!Objects.equals(role, user.role)) return false;
+        return Objects.equals(code, user.code);
     }
 
     @Override
@@ -109,6 +120,7 @@ public class User {
         result = 31 * result + (ID != null ? ID.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         result = 31 * result + (mail != null ? mail.hashCode() : 0);
+        result = 31 * result + (code != null ? code.hashCode() : 0);
 
         return result;
     }

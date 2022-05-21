@@ -5,7 +5,7 @@ public class IncorrectPasswordException extends Exception {
     private String username;
 
     public IncorrectPasswordException(String username) {
-        super(String.format("The password for %s is incorrect!", username));
+        super(String.format("The password for '%s' is incorrect!", username));
         this.username = username;
     }
 

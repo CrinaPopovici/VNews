@@ -2,25 +2,81 @@ package org.loose.fis.sre.controllers;
 
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import org.loose.fis.sre.Main;
-
-import java.io.IOException;
+import javafx.scene.control.MenuItem;
+import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.model.Article;
+import org.loose.fis.sre.services.AddArticlesService;
+import org.loose.fis.sre.services.UserService;
 
 public class MainLoginController {
+    public AnchorPane tabel;
+
     public void BacktoLogin(ActionEvent actionEvent) {
-        try {
-            Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("Login.fxml"));
-            Stage thisStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            thisStage.setScene(new Scene(root, 300, 500));
-            thisStage.show();
-        } catch (IOException e) {
-            System.out.println(e);
+        Main m = new Main();
+        m.changeScene("Login.fxml");
+    }
+
+    public void goToArticle(ActionEvent actionEvent) {
+        Main m = new Main();
+        m.changeScene("AddArticles.fxml");
+    }
+
+    public MenuItem EnglishFx, HomeFx, RomanianFx, FrenchFx, SpanishFx;
+    public void handleHome(ActionEvent actionEvent){
+
+    }
+    public void handleEnglish(ActionEvent actionEvent){
+        int i=0;
+        for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("English")){
+            Pane newp = new Pane();
+            newp.setLayoutX(0);
+            newp.setLayoutY(100*i);
+            newp.prefHeight(100);
+            newp.prefWidth(400);
+            TextArea ta = new TextArea();
+            newp.getChildren().add(ta);
+            ta.setText(a.getLabel());
+            ta.setLayoutX(100);
+            ta.setLayoutY(5);
+            ta.setPrefHeight(80);
+            ta.setPrefWidth(200);
+
+
+            ImageView iv = new ImageView();
+            newp.getChildren().add(iv);
+            iv.setImage(new Image(a.getImage()));
+            iv.setLayoutX(5);
+            iv.setLayoutY(5);
+            iv.setFitHeight(80);
+            iv.setFitWidth(80);
+            tabel.getChildren().add(newp);
+            i++;
+            Button b = new Button();
+            b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleEnglish(evt); });
+            newp.getChildren().add(b);
+
         }
+
+        tabel.setPrefHeight(i*100);
+    }
+    public void handleRomanian(ActionEvent actionEvent){
+
+    }
+    public void handleFrench(ActionEvent actionEvent){
+
+    }
+    public void handleGerman(ActionEvent actionEvent){
+
+    }
+    public void handleSpanish(ActionEvent actionEvent){
+
     }
 }
 
