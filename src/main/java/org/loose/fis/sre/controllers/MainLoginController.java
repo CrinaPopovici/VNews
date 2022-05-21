@@ -58,6 +58,9 @@ public class MainLoginController {
             iv.setFitWidth(80);
             tabel.getChildren().add(newp);
             i++;
+            Button b = new Button();
+            b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleEnglish(evt); });
+            newp.getChildren().add(b);
 
         }
 

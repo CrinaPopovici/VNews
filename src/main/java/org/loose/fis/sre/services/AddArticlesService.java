@@ -48,6 +48,9 @@ public class AddArticlesService {
         return articleRepository.find(ObjectFilters.eq("detectLanguage",language)).toList();
 
     }
+    public static void deleteArticle(String label) {
+        articleRepository.remove(ObjectFilters.eq("label",label));
+    }
 
 
 }
