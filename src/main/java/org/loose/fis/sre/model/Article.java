@@ -7,14 +7,26 @@ import org.dizitart.no2.objects.Id;
 import java.util.Objects;
 
 public class Article {
-@Id
-    private Image image;
-    private Label label;
+
+    private String imageAdress;
+    @Id
+    private String label;
+
+    public String getDetectLanguage() {
+        return detectLanguage;
+    }
+
+    public void setDetectLanguage(String detectLanguage) {
+        this.detectLanguage = detectLanguage;
+    }
+
+    private String detectLanguage;
 
 
-        public Article(Image image, Label label) {
-            this.image = image;
+        public Article(String imageAdress, String label, String detectLanguage) {
+            this.imageAdress = imageAdress;
             this.label = label;
+            this.detectLanguage = detectLanguage;
 
         }
 
@@ -27,45 +39,34 @@ public class Article {
         this.password = password;
     }*/
 
-    public Image getImage() {
-        return image;
+    public String getImage() {
+        return imageAdress;
     }
 
-    public void setImage(Image image) {
-        this.image = image;
+    public void setImage(String imageAdress) {
+        this.imageAdress = imageAdress;
     }
 
-    public  Label getLabel() {
+    public  String getLabel() {
         return label;
     }
 
-    public void setLabel(Label label) {
+    public void setLabel(String label) {
         this.label = label;
     }
 
-    public void  setArticle()
-    {
-        setImage(image);
-        setLabel(label);
-
-    }
-    public void getArticle()
-    {
-        getImage();
-        getLabel();
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Article article = (Article) o;
-        return Objects.equals(image, article.image) && Objects.equals(label, article.label);
+        return Objects.equals(imageAdress, article.imageAdress) && Objects.equals(label, article.label);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, label);
+        return Objects.hash(imageAdress, label);
     }
 }
 

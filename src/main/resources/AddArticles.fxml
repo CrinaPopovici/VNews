@@ -8,7 +8,7 @@
 
 
    <children>
-      <TextArea layoutX="63.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="textArea" layoutX="63.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" />
       <Button mnemonicParsing="false" onAction="#handleBackToMainLogin" text="Back" />
       <Button fx:id="btnOpenImgFile" layoutX="290.0" layoutY="300.0" mnemonicParsing="false" onAction="#uploadChoosenImage" text="Upload image" />
       <ImageView fx:id="imageViewFiles" fitHeight="94.0" fitWidth="200.0" layoutX="63.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />

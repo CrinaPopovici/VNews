@@ -2,44 +2,25 @@ package org.loose.fis.sre.services;
 
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
-import javafx.stage.FileChooser;
 import org.dizitart.no2.Cursor;
 import org.dizitart.no2.Document;
-import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.NitriteCollection;
 import org.dizitart.no2.objects.ObjectRepository;
-import org.h2.mvstore.Page;
-import org.loose.fis.sre.exceptions.IncorrectCodeException;
-import org.loose.fis.sre.exceptions.IncorrectUsernameException;
-import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.dizitart.no2.objects.filters.ObjectFilters;
 import org.loose.fis.sre.model.Article;
-import org.loose.fis.sre.model.User;
 
-import javax.swing.*;
-
-import java.util.Calendar;
-import java.util.Objects;
-
-import static javax.swing.text.StyleConstants.setIcon;
-import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
+import java.util.List;
 
 public class AddArticlesService {
 
-    private static ObjectRepository<Article> userRepository;
+    public static ObjectRepository<Article> articleRepository;
 
-    public static void initDatabase() {
-        Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("VNews.db").toFile())
-                .openOrCreate("test", "test");
 
-        userRepository = database.getRepository(Article.class);
-    }
 
     public static void printEnglishArticle()
     {
         try {
-            NitriteCollection n = userRepository.getDocumentCollection();
+            NitriteCollection n = articleRepository.getDocumentCollection();
             Cursor x = n.find();
             for (Document keyValuePairs : x)
             {
@@ -55,18 +36,18 @@ public class AddArticlesService {
 
 
 
-    public static void addArticle(Image image, Label label) {
-         userRepository.insert(new Article(image,label));
+    public static void addArticle(String imageAdress, String label, String detectLanguage)
+    {
+         articleRepository.insert(new Article(imageAdress,label, detectLanguage));
        // printArticle();
     }
 
-    /*
-    public static boolean ReadArticleFromDatabase() {
-        for (Article article : userRepository.find()) {
-           // if ();
-                //return true;
-        }
-    }*/
+
+    public static List<Article> ReadLanguageArticleFromDatabase(String language)
+    {
+        return articleRepository.find(ObjectFilters.eq("detectLanguage",language)).toList();
+
+    }
 
 
 }

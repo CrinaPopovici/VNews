@@ -9,6 +9,7 @@ import org.loose.fis.sre.exceptions.IncorrectCodeException;
 import org.loose.fis.sre.exceptions.IncorrectPasswordException;
 import org.loose.fis.sre.exceptions.IncorrectUsernameException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.model.Article;
 import org.loose.fis.sre.model.User;
 
 
@@ -29,6 +30,7 @@ public class UserService {
                 .openOrCreate("test", "test");
 
         userRepository = database.getRepository(User.class);
+        AddArticlesService.articleRepository = database.getRepository(Article.class);
     }
 
     public static void addUser(String username, String password, String address, String ID, String phone, String mail, String role, String code) throws UsernameAlreadyExistsException {

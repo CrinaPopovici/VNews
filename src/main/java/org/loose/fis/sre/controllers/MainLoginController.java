@@ -2,12 +2,17 @@ package org.loose.fis.sre.controllers;
 
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import org.loose.fis.sre.Main;
 import javafx.scene.control.MenuItem;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.model.Article;
+import org.loose.fis.sre.services.AddArticlesService;
 import org.loose.fis.sre.services.UserService;
 
 public class MainLoginController {
@@ -28,22 +33,35 @@ public class MainLoginController {
 
     }
     public void handleEnglish(ActionEvent actionEvent){
-        for(int i=0; i<5; i++){
+        int i=0;
+        for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("English")){
             Pane newp = new Pane();
             newp.setLayoutX(0);
-            newp.setLayoutY(300*i);
+            newp.setLayoutY(100*i);
             newp.prefHeight(100);
-            newp.prefWidth(100);
+            newp.prefWidth(400);
             TextArea ta = new TextArea();
-            ta.setLayoutX(100);
-            ta.setLayoutY(100);
-            ta.prefHeight(80);
-            ta.prefWidth(80);
             newp.getChildren().add(ta);
+            ta.setText(a.getLabel());
+            ta.setLayoutX(100);
+            ta.setLayoutY(5);
+            ta.setPrefHeight(80);
+            ta.setPrefWidth(200);
+
+
+            ImageView iv = new ImageView();
+            newp.getChildren().add(iv);
+            iv.setImage(new Image(a.getImage()));
+            iv.setLayoutX(5);
+            iv.setLayoutY(5);
+            iv.setFitHeight(80);
+            iv.setFitWidth(80);
             tabel.getChildren().add(newp);
+            i++;
+
         }
 
-        tabel.setPrefHeight(5*200);
+        tabel.setPrefHeight(i*100);
     }
     public void handleRomanian(ActionEvent actionEvent){
 

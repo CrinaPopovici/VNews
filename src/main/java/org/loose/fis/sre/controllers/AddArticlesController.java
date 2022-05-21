@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.loose.fis.sre.Main;
+import org.loose.fis.sre.services.AddArticlesService;
 //import java.scene.image.ImageView;
 import java.net.URI;
 import java.net.URL;
@@ -28,6 +29,7 @@ import java.util.ResourceBundle;
 
 
 public class AddArticlesController {
+    public javafx.scene.control.TextArea textArea;
     @FXML
     private Button btnOpenImgFIle;
     List<String> firstFile;
@@ -68,7 +70,7 @@ public class AddArticlesController {
 
 
     public void handleEnglishArticles(ActionEvent actionEvent) {
-
+        AddArticlesService.addArticle(imageViewFiles.getImage().getUrl(),textArea.getText(),"English");
 
     }
 
