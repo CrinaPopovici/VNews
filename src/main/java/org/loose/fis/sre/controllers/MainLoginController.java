@@ -59,6 +59,7 @@ public class MainLoginController {
             tabel.getChildren().add(newp);
             i++;
             Button b = new Button();
+            b.setText("delete");
             b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleEnglish(evt); });
             newp.getChildren().add(b);
 
@@ -93,6 +94,7 @@ public class MainLoginController {
             tabel.getChildren().add(newp);
             i++;
             Button b = new Button();
+            b.setText("delete");
             b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleRomanian(evt); });
             newp.getChildren().add(b);
 
@@ -128,6 +130,7 @@ public class MainLoginController {
             tabel.getChildren().add(newp);
             i++;
             Button b = new Button();
+            b.setText("delete");
             b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleFrench(evt); });
             newp.getChildren().add(b);
 
@@ -137,9 +140,75 @@ public class MainLoginController {
 
     }
     public void handleGerman(ActionEvent actionEvent){
+        int i=0;
+        for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("German")){
+            Pane newp = new Pane();
+            newp.setLayoutX(0);
+            newp.setLayoutY(100*i);
+            newp.prefHeight(100);
+            newp.prefWidth(400);
+            TextArea ta = new TextArea();
+            newp.getChildren().add(ta);
+            ta.setText(a.getLabel());
+            ta.setLayoutX(100);
+            ta.setLayoutY(5);
+            ta.setPrefHeight(80);
+            ta.setPrefWidth(200);
+
+
+            ImageView iv = new ImageView();
+            newp.getChildren().add(iv);
+            iv.setImage(new Image(a.getImage()));
+            iv.setLayoutX(5);
+            iv.setLayoutY(5);
+            iv.setFitHeight(80);
+            iv.setFitWidth(80);
+            tabel.getChildren().add(newp);
+            i++;
+            Button b = new Button();
+            b.setText("delete");
+            b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleGerman(evt); });
+            newp.getChildren().add(b);
+
+        }
+
+        tabel.setPrefHeight(i*100);
 
     }
     public void handleSpanish(ActionEvent actionEvent){
+        int i=0;
+        for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("Spanish")){
+            Pane newp = new Pane();
+            newp.setLayoutX(0);
+            newp.setLayoutY(100*i);
+            newp.prefHeight(100);
+            newp.prefWidth(400);
+            TextArea ta = new TextArea();
+            newp.getChildren().add(ta);
+            ta.setText(a.getLabel());
+            ta.setLayoutX(100);
+            ta.setLayoutY(5);
+            ta.setPrefHeight(80);
+            ta.setPrefWidth(200);
+
+
+            ImageView iv = new ImageView();
+            newp.getChildren().add(iv);
+            iv.setImage(new Image(a.getImage()));
+            iv.setLayoutX(5);
+            iv.setLayoutY(5);
+            iv.setFitHeight(80);
+            iv.setFitWidth(80);
+            tabel.getChildren().add(newp);
+            i++;
+            Button b = new Button();
+            b.setText("delete");
+            b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleSpanish(evt); });
+            newp.getChildren().add(b);
+
+        }
+
+        tabel.setPrefHeight(i*100);
 
     }
 
