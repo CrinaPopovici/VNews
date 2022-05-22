@@ -83,9 +83,13 @@ public class AddArticlesController {
     }
 
     public void handleGermanArticles(ActionEvent actionEvent) {
+        AddArticlesService.addArticle(imageViewFiles.getImage().getUrl(),textArea.getText(),"German");
+
     }
 
     public void handleSpanishArticles(ActionEvent actionEvent) {
+        AddArticlesService.addArticle(imageViewFiles.getImage().getUrl(),textArea.getText(),"Spanish");
+
     }
 }
 
