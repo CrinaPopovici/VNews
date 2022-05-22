@@ -32,13 +32,13 @@ public class LoginController {
     private TextField txtCode;
 
 
-    public void Login(ActionEvent event) throws IncorrectCodeException, IncorrectUsernameException {
+    public void Login(ActionEvent event) {
         if (txtUsername.getText().isEmpty() ){
             lblStatus.setText("Please enter a username!");}
         else if (txtPassword.getText().isEmpty()) {
             lblStatus.setText("Please enter a password!");
         }else
-            if(txtCode.getText().isEmpty())
+        if(txtCode.getText().isEmpty())
             try {
                 //UserService.printUsers();
                 UserService.CheckLogin(txtUsername.getText(),txtPassword.getText());
@@ -50,7 +50,7 @@ public class LoginController {
                 System.out.println(e);
             }catch (IncorrectPasswordException | IncorrectUsernameException e){
                 lblStatus.setText(e.getMessage());
-                e.printStackTrace();
+                //e.printStackTrace();
             }
         else{
             try {
@@ -62,10 +62,12 @@ public class LoginController {
                 thisStage.show();
             } catch (IOException e) {
                 System.out.println(e);
-            }catch (IncorrectPasswordException | IncorrectUsernameException |IncorrectCodeException e){
+            }catch (IncorrectPasswordException |IncorrectCodeException | IncorrectUsernameException e ){
                 lblStatus.setText(e.getMessage());
-                e.printStackTrace();
+                //e.printStackTrace();
             }
+
+
         }
     }
 
@@ -89,7 +91,7 @@ public class LoginController {
         }
     }*/
 
-    public void register(ActionEvent actionEvent) throws IOException {
+
         Main m = new Main();
         m.changeScene("register.fxml");
     }
