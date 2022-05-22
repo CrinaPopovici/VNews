@@ -15,7 +15,7 @@ import org.loose.fis.sre.model.Article;
 import org.loose.fis.sre.services.AddArticlesService;
 import org.loose.fis.sre.services.UserService;
 
-public class MainLoginController {
+public class VoluntarViewControler  {
     public AnchorPane tabel;
 
     public void BacktoLogin(ActionEvent actionEvent) {
@@ -23,9 +23,9 @@ public class MainLoginController {
         m.changeScene("Login.fxml");
     }
 
-    public void goToArticle(ActionEvent actionEvent) {
+    public void goToMainVoluntar(ActionEvent actionEvent) {
         Main m = new Main();
-        m.changeScene("AddArticles.fxml");
+        m.changeScene("MainVoluntar.fxml");
     }
 
     public MenuItem EnglishFx, HomeFx, RomanianFx, FrenchFx, SpanishFx;
@@ -58,10 +58,6 @@ public class MainLoginController {
             iv.setFitWidth(80);
             tabel.getChildren().add(newp);
             i++;
-            Button b = new Button();
-            b.setText("delete");
-            b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleEnglish(evt); });
-            newp.getChildren().add(b);
 
         }
 
@@ -93,10 +89,6 @@ public class MainLoginController {
             iv.setFitWidth(80);
             tabel.getChildren().add(newp);
             i++;
-            Button b = new Button();
-            b.setText("delete");
-            b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleRomanian(evt); });
-            newp.getChildren().add(b);
 
         }
 
@@ -129,10 +121,6 @@ public class MainLoginController {
             iv.setFitWidth(80);
             tabel.getChildren().add(newp);
             i++;
-            Button b = new Button();
-            b.setText("delete");
-            b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleFrench(evt); });
-            newp.getChildren().add(b);
 
         }
 
@@ -165,16 +153,12 @@ public class MainLoginController {
             iv.setFitWidth(80);
             tabel.getChildren().add(newp);
             i++;
-            Button b = new Button();
-            b.setText("delete");
-            b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleGerman(evt); });
-            newp.getChildren().add(b);
 
         }
 
         tabel.setPrefHeight(i*100);
-
     }
+
     public void handleSpanish(ActionEvent actionEvent){
         int i=0;
         for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("Spanish")){
@@ -201,18 +185,12 @@ public class MainLoginController {
             iv.setFitWidth(80);
             tabel.getChildren().add(newp);
             i++;
-            Button b = new Button();
-            b.setText("delete");
-            b.setOnAction((evt) -> {AddArticlesService.deleteArticle(a.getLabel());handleSpanish(evt); });
-            newp.getChildren().add(b);
 
         }
 
         tabel.setPrefHeight(i*100);
 
     }
-
-
 }
 
 

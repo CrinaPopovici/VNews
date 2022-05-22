@@ -11,6 +11,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class MainVoluntarControler {
+
     public void LogOff(ActionEvent actionEvent) {
         Main m = new Main();
         m.changeScene("Login.fxml");
@@ -21,6 +22,10 @@ public class MainVoluntarControler {
         m.changeScene("MainLogin.fxml");
     }
 
+    public void SeeArticles(ActionEvent actionEvent) {
+        Main m = new Main();
+        m.changeScene("VoluntarView.fxml");
+    }
     /*public <ActionLink> void Link(ActionEvent actionEvent) {
         Desktop BrowserUtil = null;
         ActionLink externalLink = new ActionLink("External link", event->BrowserUtil.browse(URI.create("http://google.com")));
@@ -40,12 +45,15 @@ public class MainVoluntarControler {
     }
 
     public void handleHome(ActionEvent actionEvent) {
+        Main m = new Main();
+        m.changeScene("MainLogin.fxml");
     }
 
     public void handleEnglish(ActionEvent actionEvent) {
     }
 
     public void handleRomanian(ActionEvent actionEvent) {
+
     }
 
     public void handleFrench(ActionEvent actionEvent) {

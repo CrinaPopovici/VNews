@@ -75,15 +75,21 @@ public class AddArticlesController {
     }
 
     public void handleRomanianArticles(ActionEvent actionEvent) {
+        AddArticlesService.addArticle(imageViewFiles.getImage().getUrl(),textArea.getText(),"Romanian");
     }
 
     public void handleFrenchArticles(ActionEvent actionEvent) {
+        AddArticlesService.addArticle(imageViewFiles.getImage().getUrl(),textArea.getText(),"French");
     }
 
     public void handleGermanArticles(ActionEvent actionEvent) {
+        AddArticlesService.addArticle(imageViewFiles.getImage().getUrl(),textArea.getText(),"German");
+
     }
 
     public void handleSpanishArticles(ActionEvent actionEvent) {
+        AddArticlesService.addArticle(imageViewFiles.getImage().getUrl(),textArea.getText(),"Spanish");
+
     }
 }
 

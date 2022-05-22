@@ -5,58 +5,36 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" style="-fx-background-color: #81B6EF;-fx-background-image: url( '1/1.jpg');" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
 
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
-    <Text id="title-text" text=" VNews - Registration" wrappingWidth="196.12890625" GridPane.columnSpan="2" GridPane.rowIndex="1">
-      <font>
-         <Font size="17.0" />
-      </font></Text>
 
+    <TextField fx:id="usernameField" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
+    <PasswordField fx:id="passwordField" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-    <Label text="Username:" GridPane.rowIndex="2" />
+    <TextField fx:id="addressField" promptText="Address" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <TextField fx:id="IDField" promptText="ID number" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-    <Label text="Password:" GridPane.rowIndex="3" />
+    <TextField fx:id="phoneField" promptText="Phone number" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <TextField fx:id="mailField" promptText="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
-    <Label text="Address:" GridPane.rowIndex="4" />
-
-    <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-
-    <Label text="ID number:" GridPane.rowIndex="5" />
-
-    <TextField fx:id="IDField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-
-    <Label text="Phone number:" GridPane.rowIndex="6" />
-
-    <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-
-    <Label text="E-mail:" GridPane.rowIndex="7" />
-
-    <TextField fx:id="mailField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-
-    <Label text="Role:" GridPane.rowIndex="8" />
-
-    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+    <ChoiceBox fx:id="role" prefWidth="168.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
     </ChoiceBox>
 
-    <Label fx:id="Code" text="Code(for administrators):" GridPane.rowIndex="9" />
-
-    <TextField fx:id="code" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+    <TextField fx:id="code" promptText="Code(for administrators):" GridPane.columnIndex="1" GridPane.rowIndex="9" />
 
     <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="10" />
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="13">
+      <Button fx:id="Backlogin" mnemonicParsing="false" onAction="#handleBacktoLogin" prefHeight="25.0" prefWidth="97.0" text="Back to login" textFill="#1207b2" />
         <Button onAction="#handleRegisterAction" text="Register" textFill="#2108ae" />
     </HBox>
-   <Button fx:id="Backlogin" mnemonicParsing="false" onAction="#handleBacktoLogin" prefHeight="25.0" prefWidth="115.0" text="Back to login" textFill="#1207b2" GridPane.rowIndex="13" />
    <columnConstraints>
+      <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
