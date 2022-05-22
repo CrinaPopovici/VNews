@@ -33,14 +33,14 @@ public class Main extends Application {
             e.printStackTrace();
         }
         primaryStage.setTitle("Welcome to VNews!");
-        int sceneWidth = 300;
-        int sceneHeight = 300;
+        int sceneWidth = 600;
+        int sceneHeight = 600;
         if (screenWidth <= 800 && screenHeight <= 600) {
             sceneWidth = 600;
-            sceneHeight = 350;
+            sceneHeight = 650;
         } else if (screenWidth <= 1280 && screenHeight <= 768) {
             sceneWidth = 800;
-            sceneHeight = 450;
+            sceneHeight = 650;
         } else if (screenWidth <= 1920 && screenHeight <= 1080) {
             sceneWidth = 1000;
             sceneHeight = 650;

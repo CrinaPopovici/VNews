@@ -18,6 +18,8 @@ import org.loose.fis.sre.services.UserService;
 import java.io.IOException;
 import java.util.Objects;
 
+import static org.loose.fis.sre.services.UserService.CodeC;
+
 
 public class LoginController {
     @FXML
@@ -30,15 +32,30 @@ public class LoginController {
     private TextField txtCode;
 
 
-    public void Login(ActionEvent event){
+    public void Login(ActionEvent event) throws IncorrectCodeException, IncorrectUsernameException {
         if (txtUsername.getText().isEmpty() ){
             lblStatus.setText("Please enter a username!");}
         else if (txtPassword.getText().isEmpty()) {
             lblStatus.setText("Please enter a password!");
         }else
+            if(txtCode.getText().isEmpty())
             try {
                 //UserService.printUsers();
-                UserService.CheckCode(txtUsername.getText(),txtPassword.getText(), txtCode.getText());
+                UserService.CheckLogin(txtUsername.getText(),txtPassword.getText());
+                Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("MainVoluntar.fxml"));
+                Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                thisStage.setScene(new Scene(root, 500, 500));
+                thisStage.show();
+            } catch (IOException e) {
+                System.out.println(e);
+            }catch (IncorrectPasswordException | IncorrectUsernameException e){
+                lblStatus.setText(e.getMessage());
+                e.printStackTrace();
+            }
+        else{
+            try {
+                //UserService.printUsers();
+                UserService.CheckCode(txtUsername.getText(),txtPassword.getText(),txtCode.getText());
                 Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("MainLogin.fxml"));
                 Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 thisStage.setScene(new Scene(root, 500, 500));
@@ -50,6 +67,7 @@ public class LoginController {
                 e.printStackTrace();
             }
         }
+    }
 
 
 

@@ -9,6 +9,7 @@ import org.loose.fis.sre.exceptions.IncorrectCodeException;
 import org.loose.fis.sre.exceptions.IncorrectPasswordException;
 import org.loose.fis.sre.exceptions.IncorrectUsernameException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.model.Article;
 import org.loose.fis.sre.model.User;
 
 
@@ -29,6 +30,7 @@ public class UserService {
                 .openOrCreate("test", "test");
 
         userRepository = database.getRepository(User.class);
+        AddArticlesService.articleRepository = database.getRepository(Article.class);
     }
 
     public static void addUser(String username, String password, String address, String ID, String phone, String mail, String role, String code) throws UsernameAlreadyExistsException {
@@ -79,7 +81,7 @@ public class UserService {
 
 
     public static boolean CheckLogin(String username, String password) throws IncorrectUsernameException, IncorrectPasswordException {
-        for (User user : userRepository.find()) {//pt toti userii din bazade date
+        for (User user : userRepository.find()) {//pt toti userii din baza de date
             if (Objects.equals(username, user.getUsername())) {
                // System.out.println(user.getPassword());
                 if(user.getPassword().equals(encodePassword(username,password))) //daca parolele din aplicatie si din baza de date(cea din baza de date e criptata) sunt egale
@@ -100,6 +102,15 @@ public class UserService {
                 }
              throw new IncorrectPasswordException(username);
             }
+        }
+        throw new IncorrectUsernameException(username);
+    }
+
+    public static boolean CodeC(String username,String code)throws IncorrectUsernameException,IncorrectCodeException{
+        for (User user : userRepository.find()) {
+            if (Objects.equals(code, user.getCode()))
+                return true;
+            throw new IncorrectCodeException(username);
         }
         throw new IncorrectUsernameException(username);
     }

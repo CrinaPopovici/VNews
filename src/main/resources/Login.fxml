@@ -8,7 +8,7 @@
 
 
    <children>
-      <Button fx:id="loginB" layoutX="524.0" layoutY="359.0" mnemonicParsing="false" onAction="#Login" prefHeight="29.0" prefWidth="62.0" text="Login" textFill="#1e09bf" />
+      <Button fx:id="loginB" layoutX="100.0" layoutY="259.0" mnemonicParsing="false" onAction="#Login" prefHeight="29.0" prefWidth="62.0" text="Login" textFill="#1e09bf" />
       <TextField fx:id="txtUsername" layoutX="43.0" layoutY="86.0" prefHeight="35.0" prefWidth="210.0" promptText="Username">
          <font>
             <Font size="16.0" />
@@ -23,7 +23,7 @@
          <font>
             <Font size="19.0" />
          </font></Label>
-      <Button fx:id="registerB" layoutX="517.0" layoutY="420.0" mnemonicParsing="false" onAction="#register" prefHeight="29.0" prefWidth="76.0" text="Register" textFill="#2502bf" />
+      <Button fx:id="registerB" layoutX="190.0" layoutY="259.0" mnemonicParsing="false" onAction="#register" prefHeight="29.0" prefWidth="62.0" text="Register" textFill="#2502bf" />
       <TextField fx:id="txtCode" layoutX="43.0" layoutY="180.0" prefHeight="35.0" prefWidth="210.0" promptText="Code (only Administrators)">
          <font>
             <Font size="16.0" />
