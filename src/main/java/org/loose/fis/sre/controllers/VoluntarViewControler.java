@@ -15,15 +15,17 @@ import org.loose.fis.sre.model.Article;
 import org.loose.fis.sre.services.AddArticlesService;
 import org.loose.fis.sre.services.UserService;
 
+import java.io.IOException;
+
 public class VoluntarViewControler  {
     public AnchorPane tabel;
 
-    public void BacktoLogin(ActionEvent actionEvent) {
+    public void BacktoLogin(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("Login.fxml");
     }
 
-    public void goToMainVoluntar(ActionEvent actionEvent) {
+    public void goToMainVoluntar(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("MainVoluntar.fxml");
     }

@@ -56,7 +56,7 @@ public class RegistrationController {
         }
     }
 
-    public void handleBacktoLogin(ActionEvent actionEvent) {
+    public void handleBacktoLogin(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("Login.fxml");
     }
