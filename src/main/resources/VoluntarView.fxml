@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="427.0" prefWidth="464.0" style="-fx-background-image: url('1/1.jpg');" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.VoluntarViewControler">
+<AnchorPane prefHeight="420.0" prefWidth="420.0" style="-fx-background-image: url('1/1.jpg');" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.VoluntarViewControler">
     <children>
         <Button fx:id="logoff" layoutX="305.0" layoutY="27.0" mnemonicParsing="false" onAction="#BacktoLogin" text="log off" />
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-158.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true" />

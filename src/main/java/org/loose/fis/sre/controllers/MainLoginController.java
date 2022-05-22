@@ -194,6 +194,7 @@ public class MainLoginController {
                             dialog.setScene(dialogScene);
                             dialog.show();
                             dialogVbox.getChildren().add(new ImageView(a.getImage()));
+                            
                         }
                     });
             newp.getChildren().add(w);
