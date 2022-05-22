@@ -1,12 +1,13 @@
 package org.loose.fis.sre.services;
 
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import org.dizitart.no2.Cursor;
 import org.dizitart.no2.Document;
 import org.dizitart.no2.NitriteCollection;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.dizitart.no2.objects.filters.ObjectFilters;
+import org.loose.fis.sre.Main;
 import org.loose.fis.sre.model.Article;
 
 import java.util.List;
@@ -50,6 +51,11 @@ public class AddArticlesService {
     }
     public static void deleteArticle(String label) {
         articleRepository.remove(ObjectFilters.eq("label",label));
+    }
+
+    public static void goToArticle() {
+        Main m = new Main();
+        m.changeScene("OpenArticles.fxml");
     }
 
 
