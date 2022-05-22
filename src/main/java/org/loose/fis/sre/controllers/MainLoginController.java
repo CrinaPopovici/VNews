@@ -22,15 +22,17 @@ import org.loose.fis.sre.model.Article;
 import org.loose.fis.sre.services.AddArticlesService;
 import org.loose.fis.sre.services.UserService;
 
+import java.io.IOException;
+
 public class MainLoginController {
     public AnchorPane tabel;
 
-    public void BacktoLogin(ActionEvent actionEvent) {
+    public void BacktoLogin(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("Login.fxml");
     }
 
-    public void goToArticle(ActionEvent actionEvent) {
+    public void goToArticle(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("AddArticles.fxml");
     }

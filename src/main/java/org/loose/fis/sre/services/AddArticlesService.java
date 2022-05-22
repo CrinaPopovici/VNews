@@ -26,7 +26,7 @@ public class AddArticlesService {
             for (Document keyValuePairs : x)
             {
 //cand apas pe "english article" din AddArticles trebuie sa imi stocheze articolul in english articles-ul din MainLogin
-               // Article.setArticle(new Image(f.toURI().toString()));
+                // Article.setArticle(new Image(f.toURI().toString()));
 
                 //...afiseaza articolul pe mainLogin
                 System.out.println(keyValuePairs.get("image") + " " + keyValuePairs.get("label"));
@@ -39,8 +39,8 @@ public class AddArticlesService {
 
     public static void addArticle(String imageAdress, String label, String detectLanguage)
     {
-         articleRepository.insert(new Article(imageAdress,label, detectLanguage));
-       // printArticle();
+        articleRepository.insert(new Article(imageAdress,label, detectLanguage));
+        // printArticle();
     }
 
 

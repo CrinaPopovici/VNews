@@ -37,12 +37,12 @@ public class AddArticlesController {
     private Label labSingleFile;
     @FXML
     private  ImageView imageViewFiles;
-    public void handleBackToMainLogin(ActionEvent actionEvent) {
+    public void handleBackToMainLogin(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("MainLogin.fxml");
     }
 
-    public void handleGoToArticle(ActionEvent actionEvent) {
+    public void handleGoToArticle(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("MainLogin.fxml");
     }
@@ -55,7 +55,7 @@ public class AddArticlesController {
     }
     @FXML
     private void uploadChoosenImage(ActionEvent actionEvent) throws RuntimeException {
-       final FileChooser fc = new FileChooser();
+        final FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", firstFile));
         File f = fc.showOpenDialog(null);
 

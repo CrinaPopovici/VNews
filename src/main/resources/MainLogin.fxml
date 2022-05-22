@@ -4,6 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
+
 <AnchorPane prefHeight="420.0" prefWidth="420.0" style="-fx-background-image: url('1/1.jpg');" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MainLoginController">
    <children>
       <Button fx:id="logoff" layoutX="296.0" layoutY="15.0" mnemonicParsing="false" onAction="#BacktoLogin" text="log off" />
@@ -24,4 +25,5 @@
         </content>
       </ScrollPane>
    </children>
+
 </AnchorPane>
