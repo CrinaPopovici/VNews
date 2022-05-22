@@ -12,17 +12,17 @@ import java.net.URL;
 
 public class MainVoluntarControler {
 
-    public void LogOff(ActionEvent actionEvent) {
+    public void LogOff(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("Login.fxml");
     }
 
-    public void MainLogin(ActionEvent actionEvent) {
+    public void MainLogin(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("MainLogin.fxml");
     }
 
-    public void SeeArticles(ActionEvent actionEvent) {
+    public void SeeArticles(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("VoluntarView.fxml");
     }
@@ -44,7 +44,7 @@ public class MainVoluntarControler {
         }
     }
 
-    public void handleHome(ActionEvent actionEvent) {
+    public void handleHome(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("MainLogin.fxml");
     }

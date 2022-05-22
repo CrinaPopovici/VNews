@@ -44,7 +44,7 @@ public class LoginController {
                 UserService.CheckLogin(txtUsername.getText(),txtPassword.getText());
                 Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("MainVoluntar.fxml"));
                 Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                thisStage.setScene(new Scene(root, 500, 500));
+                thisStage.setScene(new Scene(root, 400, 370));
                 thisStage.show();
             } catch (IOException e) {
                 System.out.println(e);
@@ -58,7 +58,7 @@ public class LoginController {
                 UserService.CheckCode(txtUsername.getText(),txtPassword.getText(),txtCode.getText());
                 Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource("MainLogin.fxml"));
                 Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                thisStage.setScene(new Scene(root, 500, 500));
+                thisStage.setScene(new Scene(root, 400, 370));
                 thisStage.show();
             } catch (IOException e) {
                 System.out.println(e);
@@ -89,7 +89,7 @@ public class LoginController {
         }
     }*/
 
-    public void register(ActionEvent actionEvent) {
+    public void register(ActionEvent actionEvent) throws IOException {
         Main m = new Main();
         m.changeScene("register.fxml");
     }

@@ -15,24 +15,24 @@ import java.nio.file.Path;
 import java.util.Objects;
 
 public class Main extends Application {
-    int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
-    int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
+   // int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
+   // int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
 
-    private static Stage stage;
+    private static Stage stg;
 
     @Override
-    public void start(Stage primaryStage) {
-        stage = primaryStage;
-
+    public void start(Stage primaryStage) throws Exception {
         initDirectory();
         UserService.initDatabase();
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
+        //Parent root = null;
+        /*try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Login.fxml")));
+
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        primaryStage.setTitle("Welcome to VNews!");
+        }*/
+        primaryStage.setTitle("VNews!");
+        /*
         int sceneWidth = 600;
         int sceneHeight = 600;
         if (screenWidth <= 800 && screenHeight <= 600) {
@@ -48,15 +48,22 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(root, sceneWidth, sceneHeight));
         primaryStage.show();
+        */
+        ////
+        stg = primaryStage;
+       primaryStage.setResizable(false);
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Login.fxml")));
+        primaryStage.setScene(new Scene(root, 400,370));
+        primaryStage.show();
+        ////
     }
 
-    public void changeScene(String fxml) {
-        try {
-            Parent pane = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
-            stage.getScene().setRoot(pane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void changeScene(String fxml) throws IOException {
+
+            Parent pane = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(fxml)));
+            stg.getScene().setRoot(pane);
+
+
     }
 
     private void initDirectory() {
@@ -65,7 +72,9 @@ public class Main extends Application {
             applicationHomePath.toFile().mkdirs();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+
         launch(args);
     }
 }

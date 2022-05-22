@@ -23,15 +23,15 @@ public class Article {
     private String detectLanguage;
 
 
-        public Article(String imageAdress, String label, String detectLanguage) {
-            this.imageAdress = imageAdress;
-            this.label = label;
-            this.detectLanguage = detectLanguage;
+    public Article(String imageAdress, String label, String detectLanguage) {
+        this.imageAdress = imageAdress;
+        this.label = label;
+        this.detectLanguage = detectLanguage;
 
-        }
+    }
 
-        public Article() {
-         }
+    public Article() {
+    }
 
 ///user-ul pt login
     /*public User(String username, String encodePassword) {

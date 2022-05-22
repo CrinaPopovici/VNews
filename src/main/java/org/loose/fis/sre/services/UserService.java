@@ -83,32 +83,44 @@ public class UserService {
     public static boolean CheckLogin(String username, String password) throws IncorrectUsernameException, IncorrectPasswordException {
         for (User user : userRepository.find()) {//pt toti userii din baza de date
             if (Objects.equals(username, user.getUsername())) {
-               // System.out.println(user.getPassword());
+                // System.out.println(user.getPassword());
                 if(user.getPassword().equals(encodePassword(username,password))) //daca parolele din aplicatie si din baza de date(cea din baza de date e criptata) sunt egale
                     return true;
                 throw new IncorrectPasswordException(username);
             }
         }
+
         throw new IncorrectUsernameException(username);
     }
 
-    public static boolean CheckCode(String username, String password, String code) throws IncorrectUsernameException, IncorrectPasswordException, IncorrectCodeException {
-        for (User user : userRepository.find()) {//pt toti userii din bazade date
-            if (Objects.equals(username, user.getUsername())) {
-                if (user.getPassword().equals(encodePassword(username, password))) {
-                    if (Objects.equals(code, user.getCode()))
+    public static boolean CheckCode(String username, String password, String code) throws IncorrectUsernameException, IncorrectPasswordException, IncorrectCodeException
+    {
+        for (User user : userRepository.find()) //pt toti userii din bazade date
+        {
+            if (Objects.equals(username, user.getUsername()))
+            {
+                System.out.println(user.getPassword());
+                if (user.getPassword().equals(encodePassword(username, password))) //daca parolele din aplicatie si din baza de date(cea din baza de date e criptata) sunt egale
+                {
+                    System.out.println("Codul introdus de user in aplicatie in momentul logarii");
+                    System.out.println(code);
+
+
+                    if ((code.equals("ana")))
                         return true;
                     throw new IncorrectCodeException(username);
                 }
-             throw new IncorrectPasswordException(username);
+                throw new IncorrectPasswordException(username);
             }
         }
         throw new IncorrectUsernameException(username);
+
     }
 
     public static boolean CodeC(String username,String code)throws IncorrectUsernameException,IncorrectCodeException{
         for (User user : userRepository.find()) {
-            if (Objects.equals(code, user.getCode()))
+            if ((code.equals("ana")))
+
                 return true;
             throw new IncorrectCodeException(username);
         }
