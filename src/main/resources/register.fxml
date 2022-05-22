@@ -5,7 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+
+<GridPane alignment="center" hgap="10" prefHeight="420" prefWidth="420" style="-fx-background-color: #81B6EF;-fx-background-image: url( '1/1.jpg');" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
+
 <GridPane alignment="center" hgap="10" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="370" style="-fx-background-color: #81B6EF;-fx-background-image: url( '1/1.jpg');" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
+
 
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
