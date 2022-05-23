@@ -5,7 +5,7 @@ public class UsernameAlreadyExistsException extends Exception {
     private String username;
 
     public UsernameAlreadyExistsException(String username) {
-        super(String.format("Account with this username '%s' already exists!", username));
+        super(String.format("Invalid account", username));
         this.username = username;
     }
 

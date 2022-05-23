@@ -5,46 +5,35 @@ import org.loose.fis.sre.Main;
 
 import java.awt.*;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
 public class MainVoluntarControler {
 
-    public void LogOff(ActionEvent actionEvent) throws IOException {
+    public void LogOff() throws IOException {
         Main m = new Main();
         m.changeScene("Login.fxml");
     }
 
-    public void MainLogin(ActionEvent actionEvent) throws IOException {
+    public void MainLogin() throws IOException {
         Main m = new Main();
         m.changeScene("MainLogin.fxml");
     }
 
-    public void SeeArticles(ActionEvent actionEvent) throws IOException {
+    public void SeeArticles() throws IOException {
         Main m = new Main();
         m.changeScene("VoluntarView.fxml");
     }
-    /*public <ActionLink> void Link(ActionEvent actionEvent) {
-        Desktop BrowserUtil = null;
-        ActionLink externalLink = new ActionLink("External link", event->BrowserUtil.browse(URI.create("http://google.com")));
-        externalLink.setExternalLinkIcon();
-    }*/
-    public void Link(ActionEvent actionEvent) {
-        //Main m = new Main();
-        try{
+
+    public void Link() {
+        try {
             Desktop.getDesktop().browse(new URL("https://ro.yahoo.com/").toURI());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
     }
 
-    public void handleHome(ActionEvent actionEvent) throws IOException {
+    public void handleHome() throws IOException {
         Main m = new Main();
         m.changeScene("MainLogin.fxml");
     }

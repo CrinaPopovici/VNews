@@ -1,7 +1,5 @@
 package org.loose.fis.sre.model;
 
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import org.dizitart.no2.objects.Id;
 
 import java.util.Objects;
@@ -33,11 +31,6 @@ public class Article {
     public Article() {
     }
 
-///user-ul pt login
-    /*public User(String username, String encodePassword) {
-        this.username = username;
-        this.password = password;
-    }*/
 
     public String getImage() {
         return imageAdress;
@@ -47,7 +40,7 @@ public class Article {
         this.imageAdress = imageAdress;
     }
 
-    public  String getLabel() {
+    public String getLabel() {
         return label;
     }
 
