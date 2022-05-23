@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="358.0" style="-fx-background-color: #81B6EF; -fx-background-image: url( '1/1.jpg'); " xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddArticlesController">
+
+
+    <children>
+        <TextArea fx:id="textArea" layoutX="63.0" layoutY="125.0" prefHeight="200.0" prefWidth="167.0" />
+        <Button mnemonicParsing="false" onAction="#handleBackToMainLogin" text="Back" />
+        <Button fx:id="btnOpenImgFile" layoutX="173.0" layoutY="341.0" mnemonicParsing="false" onAction="#uploadChoosenImage" text="Upload image" />
+        <ImageView fx:id="imageViewFiles" fitHeight="94.0" fitWidth="200.0" layoutX="63.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
+        <MenuButton layoutX="41.0" mnemonicParsing="false" text="Add as">
+            <items>
+                <MenuItem fx:id="EnglishFx" mnemonicParsing="false" onAction="#handleEnglishArticles" text="English Article" />
+                <MenuItem fx:id="RomanianFx" mnemonicParsing="false" onAction="#handleRomanianArticles" text="Romanian Article" />
+                <MenuItem fx:id="FrenchFx" mnemonicParsing="false" onAction="#handleFrenchArticles" text="French Article" />
+                <MenuItem fx:id="GermanFx" mnemonicParsing="false" onAction="#handleGermanArticles" text="German Article" />
+                <MenuItem fx:id="SpanishFx" mnemonicParsing="false" onAction="#handleSpanishArticles" text="Spanish Article" />
+            </items>
+        </MenuButton>
+    </children>
+</AnchorPane>

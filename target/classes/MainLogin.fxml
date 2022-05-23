@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="420.0" prefWidth="358.0" style="-fx-background-image: url('1/1.jpg');" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MainLoginController">
+    <children>
+        <Button fx:id="logoff" layoutX="296.0" layoutY="15.0" mnemonicParsing="false" onAction="#BacktoLogin" text="log off" />
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-158.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true" />
+        <MenuButton layoutX="25.0" layoutY="15.0" mnemonicParsing="false" text="Meniu">
+            <items>
+                <MenuItem fx:id="EnglishFx" mnemonicParsing="false" onAction="#handleEnglish" text="English Articles" />
+                <MenuItem fx:id="RomanianFx" mnemonicParsing="false" onAction="#handleRomanian" text="Romanian Articles" />
+                <MenuItem fx:id="FrenchFx" mnemonicParsing="false" onAction="#handleFrench" text="French Articles" />
+                <MenuItem fx:id="GermanFx" mnemonicParsing="false" onAction="#handleGerman" text="German Articles" />
+                <MenuItem fx:id="SpanishFx" mnemonicParsing="false" onAction="#handleSpanish" text="Spanish Articles" />
+            </items>
+        </MenuButton>
+        <Button layoutX="186.0" layoutY="15.0" mnemonicParsing="false" onAction="#goToArticle" text="Adauga articol" />
+        <ScrollPane layoutX="14.0" layoutY="60.0" prefHeight="352.0" prefWidth="342.0" style="-fx-background-image: url('1/1.jpg');">
+            <content>
+                <AnchorPane fx:id="tabel" minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="341.0" style="-fx-background-image: url('1/1.jpg');" />
+            </content>
+        </ScrollPane>
+    </children>
+
+</AnchorPane>
