@@ -4,6 +4,12 @@ package org.loose.fis.sre.controllers;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
@@ -16,36 +22,39 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.loose.fis.sre.Main;
 import javafx.scene.control.MenuItem;
-import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.Article;
 import org.loose.fis.sre.services.AddArticlesService;
-import org.loose.fis.sre.services.UserService;
 
 import java.io.IOException;
 
-public class VoluntarViewControler  {
+public class VoluntarViewControler {
     public AnchorPane tabel;
 
-    public void BacktoLogin(ActionEvent actionEvent) throws IOException {
+    public void BacktoLogin() throws IOException {
         Main m = new Main();
         m.changeScene("Login.fxml");
     }
 
-    public void goToMainVoluntar(ActionEvent actionEvent) throws IOException {
+    public void goToMainVoluntar() throws IOException {
         Main m = new Main();
         m.changeScene("MainVoluntar.fxml");
     }
 
-    public MenuItem EnglishFx, HomeFx, RomanianFx, FrenchFx, SpanishFx;
-    public void handleHome(ActionEvent actionEvent){
+    public MenuItem EnglishFx;
+    public MenuItem RomanianFx;
+    public MenuItem FrenchFx;
+    public MenuItem SpanishFx;
+
+    public void handleHome() {
 
     }
-    public void handleEnglish(ActionEvent actionEvent){
-        int i=0;
-        for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("English")){
+
+    public void handleEnglish() {
+        int i = 0;
+        for (Article a : AddArticlesService.ReadLanguageArticleFromDatabase("English")) {
             Pane newp = new Pane();
             newp.setLayoutX(0);
-            newp.setLayoutY(100*i);
+            newp.setLayoutY(100 * i);
             newp.prefHeight(100);
             newp.prefWidth(400);
             TextArea ta = new TextArea();
@@ -71,32 +80,30 @@ public class VoluntarViewControler  {
             w.setLayoutX(50);
             w.setText("Open");
             w.setOnAction(
-                    new EventHandler<ActionEvent>() {
-                        @Override
-                        public void handle(ActionEvent event) {
-                            final Stage dialog = new Stage();
-                            dialog.initModality(Modality.APPLICATION_MODAL);
-                            VBox dialogVbox = new VBox(10);
-                            dialogVbox.resize(1,1);
-                            dialogVbox.getChildren().add(new Text(a.getLabel()));
-                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
-                            dialog.setScene(dialogScene);
-                            dialog.show();
-                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
-                        }
+                    event -> {
+                        final Stage dialog = new Stage();
+                        dialog.initModality(Modality.APPLICATION_MODAL);
+                        VBox dialogVbox = new VBox(10);
+                        dialogVbox.resize(1, 1);
+                        dialogVbox.getChildren().add(new Text(a.getLabel()));
+                        Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                        dialog.setScene(dialogScene);
+                        dialog.show();
+                        dialogVbox.getChildren().add(new ImageView(a.getImage()));
                     });
             newp.getChildren().add(w);
 
         }
 
-        tabel.setPrefHeight(i*100);
+        tabel.setPrefHeight(i * 100);
     }
-    public void handleRomanian(ActionEvent actionEvent){
-        int i=0;
-        for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("Romanian")){
+
+    public void handleRomanian() {
+        int i = 0;
+        for (Article a : AddArticlesService.ReadLanguageArticleFromDatabase("Romanian")) {
             Pane newp = new Pane();
             newp.setLayoutX(0);
-            newp.setLayoutY(100*i);
+            newp.setLayoutY(100 * i);
             newp.prefHeight(100);
             newp.prefWidth(400);
             TextArea ta = new TextArea();
@@ -122,33 +129,30 @@ public class VoluntarViewControler  {
             w.setLayoutX(50);
             w.setText("Open");
             w.setOnAction(
-                    new EventHandler<ActionEvent>() {
-                        @Override
-                        public void handle(ActionEvent event) {
-                            final Stage dialog = new Stage();
-                            dialog.initModality(Modality.APPLICATION_MODAL);
-                            VBox dialogVbox = new VBox(10);
-                            dialogVbox.resize(1,1);
-                            dialogVbox.getChildren().add(new Text(a.getLabel()));
-                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
-                            dialog.setScene(dialogScene);
-                            dialog.show();
-                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
-                        }
+                    event -> {
+                        final Stage dialog = new Stage();
+                        dialog.initModality(Modality.APPLICATION_MODAL);
+                        VBox dialogVbox = new VBox(10);
+                        dialogVbox.resize(1, 1);
+                        dialogVbox.getChildren().add(new Text(a.getLabel()));
+                        Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                        dialog.setScene(dialogScene);
+                        dialog.show();
+                        dialogVbox.getChildren().add(new ImageView(a.getImage()));
                     });
             newp.getChildren().add(w);
 
         }
 
-        tabel.setPrefHeight(i*100);
+        tabel.setPrefHeight(i * 100);
     }
 
-    public void handleFrench(ActionEvent actionEvent){
-        int i=0;
-        for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("French")){
+    public void handleFrench() {
+        int i = 0;
+        for (Article a : AddArticlesService.ReadLanguageArticleFromDatabase("French")) {
             Pane newp = new Pane();
             newp.setLayoutX(0);
-            newp.setLayoutY(100*i);
+            newp.setLayoutY(100 * i);
             newp.prefHeight(100);
             newp.prefWidth(400);
             TextArea ta = new TextArea();
@@ -174,33 +178,31 @@ public class VoluntarViewControler  {
             w.setLayoutX(50);
             w.setText("Open");
             w.setOnAction(
-                    new EventHandler<ActionEvent>() {
-                        @Override
-                        public void handle(ActionEvent event) {
-                            final Stage dialog = new Stage();
-                            dialog.initModality(Modality.APPLICATION_MODAL);
-                            VBox dialogVbox = new VBox(10);
-                            dialogVbox.resize(1,1);
-                            dialogVbox.getChildren().add(new Text(a.getLabel()));
-                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
-                            dialog.setScene(dialogScene);
-                            dialog.show();
-                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
-                        }
+                    event -> {
+                        final Stage dialog = new Stage();
+                        dialog.initModality(Modality.APPLICATION_MODAL);
+                        VBox dialogVbox = new VBox(10);
+                        dialogVbox.resize(1, 1);
+                        dialogVbox.getChildren().add(new Text(a.getLabel()));
+                        Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                        dialog.setScene(dialogScene);
+                        dialog.show();
+                        dialogVbox.getChildren().add(new ImageView(a.getImage()));
                     });
             newp.getChildren().add(w);
 
         }
 
-        tabel.setPrefHeight(i*100);
+        tabel.setPrefHeight(i * 100);
 
     }
-    public void handleGerman(ActionEvent actionEvent){
-        int i=0;
-        for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("German")){
+
+    public void handleGerman(ActionEvent actionEvent) {
+        int i = 0;
+        for (Article a : AddArticlesService.ReadLanguageArticleFromDatabase("German")) {
             Pane newp = new Pane();
             newp.setLayoutX(0);
-            newp.setLayoutY(100*i);
+            newp.setLayoutY(100 * i);
             newp.prefHeight(100);
             newp.prefWidth(400);
             TextArea ta = new TextArea();
@@ -226,33 +228,30 @@ public class VoluntarViewControler  {
             w.setLayoutX(50);
             w.setText("Open");
             w.setOnAction(
-                    new EventHandler<ActionEvent>() {
-                        @Override
-                        public void handle(ActionEvent event) {
-                            final Stage dialog = new Stage();
-                            dialog.initModality(Modality.APPLICATION_MODAL);
-                            VBox dialogVbox = new VBox(10);
-                            dialogVbox.resize(1,1);
-                            dialogVbox.getChildren().add(new Text(a.getLabel()));
-                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
-                            dialog.setScene(dialogScene);
-                            dialog.show();
-                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
-                        }
+                    event -> {
+                        final Stage dialog = new Stage();
+                        dialog.initModality(Modality.APPLICATION_MODAL);
+                        VBox dialogVbox = new VBox(10);
+                        dialogVbox.resize(1, 1);
+                        dialogVbox.getChildren().add(new Text(a.getLabel()));
+                        Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                        dialog.setScene(dialogScene);
+                        dialog.show();
+                        dialogVbox.getChildren().add(new ImageView(a.getImage()));
                     });
             newp.getChildren().add(w);
 
         }
 
-        tabel.setPrefHeight(i*100);
+        tabel.setPrefHeight(i * 100);
     }
 
-    public void handleSpanish(ActionEvent actionEvent){
-        int i=0;
-        for(Article a : AddArticlesService.ReadLanguageArticleFromDatabase("Spanish")){
+    public void handleSpanish(ActionEvent actionEvent) {
+        int i = 0;
+        for (Article a : AddArticlesService.ReadLanguageArticleFromDatabase("Spanish")) {
             Pane newp = new Pane();
             newp.setLayoutX(0);
-            newp.setLayoutY(100*i);
+            newp.setLayoutY(100 * i);
             newp.prefHeight(100);
             newp.prefWidth(400);
             TextArea ta = new TextArea();
@@ -278,25 +277,22 @@ public class VoluntarViewControler  {
             w.setLayoutX(50);
             w.setText("Open");
             w.setOnAction(
-                    new EventHandler<ActionEvent>() {
-                        @Override
-                        public void handle(ActionEvent event) {
-                            final Stage dialog = new Stage();
-                            dialog.initModality(Modality.APPLICATION_MODAL);
-                            VBox dialogVbox = new VBox(10);
-                            dialogVbox.resize(1,1);
-                            dialogVbox.getChildren().add(new Text(a.getLabel()));
-                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
-                            dialog.setScene(dialogScene);
-                            dialog.show();
-                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
-                        }
+                    event -> {
+                        final Stage dialog = new Stage();
+                        dialog.initModality(Modality.APPLICATION_MODAL);
+                        VBox dialogVbox = new VBox(10);
+                        dialogVbox.resize(1, 1);
+                        dialogVbox.getChildren().add(new Text(a.getLabel()));
+                        Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                        dialog.setScene(dialogScene);
+                        dialog.show();
+                        dialogVbox.getChildren().add(new ImageView(a.getImage()));
                     });
             newp.getChildren().add(w);
 
         }
 
-        tabel.setPrefHeight(i*100);
+        tabel.setPrefHeight(i * 100);
 
     }
 }

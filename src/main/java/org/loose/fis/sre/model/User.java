@@ -14,6 +14,7 @@ public class User {
     private String mail;
     private String role;
     private String code;
+
     public User() {
     }
 
@@ -27,11 +28,6 @@ public class User {
         this.role = role;
         this.code = code;
     }
-///user-ul pt login
-    /*public User(String username, String encodePassword) {
-        this.username = username;
-        this.password = password;
-    }*/
 
     public String getUsername() {
         return username;
@@ -85,12 +81,15 @@ public class User {
         return mail;
     }
 
-    public void setMail(String mail) {this.mail = mail;}
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 
-    public String getCode(){
+    public String getCode() {
         return code;
     }
-    public void setCode(String code){
+
+    public void setCode(String code) {
         this.code = code;
     }
 

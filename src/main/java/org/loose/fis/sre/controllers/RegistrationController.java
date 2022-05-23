@@ -1,22 +1,16 @@
 package org.loose.fis.sre.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import org.loose.fis.sre.Main;
+import org.loose.fis.sre.exceptions.IncorrectCodeException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.services.UserService;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class RegistrationController {
 
@@ -41,22 +35,23 @@ public class RegistrationController {
 
 
     @FXML
-    public void initialize() {
+    public void initialize() throws NullPointerException {
         role.getItems().addAll("translator", "verifier");
         role.setValue("translator");
     }
 
     @FXML
-    public void handleRegisterAction() {
+    public void handleRegisterAction()  {
         try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), addressField.getText(), IDField.getText(), phoneField.getText(), mailField.getText(), (String) role.getValue(), code.getText());
-            registrationMessage.setText("Account created successfully!");
+            if(registrationMessage != null) registrationMessage.setText(" Account created successfully!");
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
+
         }
     }
 
-    public void handleBacktoLogin(ActionEvent actionEvent) throws IOException {
+    public void handleBacktoLogin() throws IOException, NullPointerException {
         Main m = new Main();
         m.changeScene("Login.fxml");
     }

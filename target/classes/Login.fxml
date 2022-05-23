@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="358.0" style="-fx-background-color: #81B6EF; -fx-background-image: url( '1/1.jpg');" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
+
+
+    <children>
+        <Button fx:id="loginB" layoutX="100.0" layoutY="259.0" mnemonicParsing="false" onAction="#Login" prefHeight="29.0" prefWidth="62.0" text="Login" textFill="#1e09bf" />
+        <TextField fx:id="txtUsername" layoutX="43.0" layoutY="86.0" prefHeight="35.0" prefWidth="210.0" promptText="Username">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </TextField>
+        <PasswordField fx:id="txtPassword" layoutX="43.0" layoutY="134.0" prefHeight="35.0" prefWidth="210.0" promptText="Password">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </PasswordField>
+        <Label fx:id="lblStatus" layoutX="43.0" layoutY="37.0" prefHeight="28.0" prefWidth="608.0" text="VNews" textFill="#464fcd" textOverrun="CLIP">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Button fx:id="registerB" layoutX="190.0" layoutY="259.0" mnemonicParsing="false" onAction="#register" prefHeight="29.0" prefWidth="62.0" text="Register" textFill="#2502bf" />
+        <TextField fx:id="txtCode" layoutX="43.0" layoutY="180.0" prefHeight="35.0" prefWidth="210.0" promptText="Code (only Administrators)">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </TextField>
+    </children>
+</AnchorPane>
