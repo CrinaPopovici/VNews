@@ -5,9 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="420.0" prefWidth="420.0" style="-fx-background-image: url('1/1.jpg');" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.VoluntarViewControler">
-
-<AnchorPane minWidth="-Infinity" prefHeight="400.0" prefWidth="370.0" style="-fx-background-image: url('1/1.jpg');" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.VoluntarViewControler">
+<AnchorPane minWidth="-Infinity" prefHeight="420.0" prefWidth="420.0" style="-fx-background-image: url('1/1.jpg');" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.VoluntarViewControler">
 
     <children>
         <Button fx:id="logoff" layoutX="290.0" layoutY="27.0" mnemonicParsing="false" onAction="#BacktoLogin" text="log off" />

@@ -91,9 +91,10 @@ public class LoginController {
         }
     }*/
 
+    public void register(ActionEvent actionEvent) throws IncorrectCodeException, IOException {
 
         Main m = new Main();
-        m.changeScene("register.fxml");
+        m.changeScene ("register.fxml");
     }
 
 
