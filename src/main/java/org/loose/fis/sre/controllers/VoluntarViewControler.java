@@ -2,12 +2,18 @@ package org.loose.fis.sre.controllers;
 
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import org.loose.fis.sre.Main;
 import javafx.scene.control.MenuItem;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
@@ -61,6 +67,26 @@ public class VoluntarViewControler  {
             tabel.getChildren().add(newp);
             i++;
 
+            Button w = new Button();
+            w.setLayoutX(50);
+            w.setText("Open");
+            w.setOnAction(
+                    new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            final Stage dialog = new Stage();
+                            dialog.initModality(Modality.APPLICATION_MODAL);
+                            VBox dialogVbox = new VBox(10);
+                            dialogVbox.resize(1,1);
+                            dialogVbox.getChildren().add(new Text(a.getLabel()));
+                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                            dialog.setScene(dialogScene);
+                            dialog.show();
+                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
+                        }
+                    });
+            newp.getChildren().add(w);
+
         }
 
         tabel.setPrefHeight(i*100);
@@ -91,6 +117,26 @@ public class VoluntarViewControler  {
             iv.setFitWidth(80);
             tabel.getChildren().add(newp);
             i++;
+
+            Button w = new Button();
+            w.setLayoutX(50);
+            w.setText("Open");
+            w.setOnAction(
+                    new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            final Stage dialog = new Stage();
+                            dialog.initModality(Modality.APPLICATION_MODAL);
+                            VBox dialogVbox = new VBox(10);
+                            dialogVbox.resize(1,1);
+                            dialogVbox.getChildren().add(new Text(a.getLabel()));
+                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                            dialog.setScene(dialogScene);
+                            dialog.show();
+                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
+                        }
+                    });
+            newp.getChildren().add(w);
 
         }
 
@@ -124,6 +170,26 @@ public class VoluntarViewControler  {
             tabel.getChildren().add(newp);
             i++;
 
+            Button w = new Button();
+            w.setLayoutX(50);
+            w.setText("Open");
+            w.setOnAction(
+                    new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            final Stage dialog = new Stage();
+                            dialog.initModality(Modality.APPLICATION_MODAL);
+                            VBox dialogVbox = new VBox(10);
+                            dialogVbox.resize(1,1);
+                            dialogVbox.getChildren().add(new Text(a.getLabel()));
+                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                            dialog.setScene(dialogScene);
+                            dialog.show();
+                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
+                        }
+                    });
+            newp.getChildren().add(w);
+
         }
 
         tabel.setPrefHeight(i*100);
@@ -156,6 +222,26 @@ public class VoluntarViewControler  {
             tabel.getChildren().add(newp);
             i++;
 
+            Button w = new Button();
+            w.setLayoutX(50);
+            w.setText("Open");
+            w.setOnAction(
+                    new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            final Stage dialog = new Stage();
+                            dialog.initModality(Modality.APPLICATION_MODAL);
+                            VBox dialogVbox = new VBox(10);
+                            dialogVbox.resize(1,1);
+                            dialogVbox.getChildren().add(new Text(a.getLabel()));
+                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                            dialog.setScene(dialogScene);
+                            dialog.show();
+                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
+                        }
+                    });
+            newp.getChildren().add(w);
+
         }
 
         tabel.setPrefHeight(i*100);
@@ -187,6 +273,26 @@ public class VoluntarViewControler  {
             iv.setFitWidth(80);
             tabel.getChildren().add(newp);
             i++;
+
+            Button w = new Button();
+            w.setLayoutX(50);
+            w.setText("Open");
+            w.setOnAction(
+                    new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            final Stage dialog = new Stage();
+                            dialog.initModality(Modality.APPLICATION_MODAL);
+                            VBox dialogVbox = new VBox(10);
+                            dialogVbox.resize(1,1);
+                            dialogVbox.getChildren().add(new Text(a.getLabel()));
+                            Scene dialogScene = new Scene(dialogVbox, 600, 600);
+                            dialog.setScene(dialogScene);
+                            dialog.show();
+                            dialogVbox.getChildren().add(new ImageView(a.getImage()));
+                        }
+                    });
+            newp.getChildren().add(w);
 
         }
 

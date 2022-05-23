@@ -10,6 +10,7 @@ import org.dizitart.no2.objects.filters.ObjectFilters;
 import org.loose.fis.sre.Main;
 import org.loose.fis.sre.model.Article;
 
+import java.io.IOException;
 import java.util.List;
 
 public class AddArticlesService {
@@ -53,7 +54,7 @@ public class AddArticlesService {
         articleRepository.remove(ObjectFilters.eq("label",label));
     }
 
-    public static void goToArticle() {
+    public static void goToArticle() throws IOException {
         Main m = new Main();
         m.changeScene("OpenArticles.fxml");
     }
