@@ -5,26 +5,29 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420" prefWidth="358.0" style="-fx-background-color: #81B6EF;-fx-background-image: url( '1/1.jpg');" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
+<GridPane alignment="center" hgap="10" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420" prefWidth="358.0"
+          style="-fx-background-color: #81B6EF;-fx-background-image: url( '1/1.jpg');" vgap="10"
+          xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="org.loose.fis.sre.controllers.RegistrationController">
 
 
     <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
     </padding>
 
-    <TextField fx:id="usernameField" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <TextField fx:id="usernameField" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-    <PasswordField fx:id="passwordField" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <PasswordField fx:id="passwordField" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-    <TextField fx:id="addressField" promptText="Address" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <TextField fx:id="addressField" promptText="Address" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
 
-    <TextField fx:id="IDField" promptText="ID number" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <TextField fx:id="IDField" promptText="ID number" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
 
-    <TextField fx:id="phoneField" promptText="Phone number" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-    <Text fx:id="registrationMessage" fill="RED" GridPane.columnSpan="3" />
+    <TextField fx:id="phoneField" promptText="Phone number" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+    <Text fx:id="registrationMessage" fill="RED" GridPane.columnSpan="3"/>
 
-    <TextField fx:id="mailField" promptText="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-    <TextField fx:id="code" promptText="code" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+    <TextField fx:id="mailField" promptText="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    <TextField fx:id="code" promptText="code" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
 
 
     <ChoiceBox fx:id="role" prefWidth="168.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
@@ -34,28 +37,29 @@
 
 
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="13">
-        <Button fx:id="Backlogin" mnemonicParsing="false" onAction="#handleBacktoLogin" prefHeight="5.0" prefWidth="97.0" text="Back to login" textFill="#1207b2" />
-        <Button onAction="#handleRegisterAction" text="Register" textFill="#2108ae" />
+        <Button fx:id="Backlogin" mnemonicParsing="false" onAction="#handleBacktoLogin" prefHeight="5.0"
+                prefWidth="97.0" text="Back to login" textFill="#1207b2"/>
+        <Button onAction="#handleRegisterAction" text="Register" textFill="#2108ae"/>
     </HBox>
     <columnConstraints>
-        <ColumnConstraints />
-        <ColumnConstraints />
-        <ColumnConstraints />
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
-        <RowConstraints />
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
     </rowConstraints>
 </GridPane>
